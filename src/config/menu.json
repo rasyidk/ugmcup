@@ -1,0 +1,19 @@
+{
+  "main": [
+    {
+      "name": "Beranda",
+      "url": "/",
+      "targetSegment": "/"
+    },
+    {
+      "name": "Jadwal Pertandingan",
+      "url": "/jadwal",
+      "targetSegment": "jadwal"
+    },
+    {
+      "name": "Bagan",
+      "url": "/bagan",
+      "targetSegment": "bagan"
+    }
+  ]
+}
