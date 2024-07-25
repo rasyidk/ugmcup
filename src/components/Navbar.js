@@ -115,9 +115,7 @@ export default function Navbar() {
         {/* Mobile Navbar */}
         <div
           ref={mobileMenuRef}
-          className={`flex flex-col text-black lg:hidden text-center font-semibold overflow-hidden${
-            scrollTop < 100 ? "bg-primary" : "bg-transparent"
-          }`}
+          className={`flex flex-col text-black lg:hidden text-center font-semibold overflow-hidden`}
           style={{ height: 0 }}
         >
           {links.map((link, index) => (
