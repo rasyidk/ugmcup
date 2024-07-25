@@ -25,3 +25,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.text-outline-decoration {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white; /* Outline color */
+}
+.text-shadow-decoration {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black; /* Outline color */
+  text-shadow: -3px 3px 0px black;
+}
