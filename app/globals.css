@@ -35,3 +35,22 @@ body {
   -webkit-text-stroke-color: black; /* Outline color */
   text-shadow: -3px 3px 0px black;
 }
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b4b6cc;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #92440e;
+}
