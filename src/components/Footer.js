@@ -132,12 +132,5 @@ export function Footer({ type }) {
     </footer>
   );
 }
-Footer.propTypes = {
-  type: PropTypes.string,
-};
-
-Footer.defaultProps = {
-  type: "type1",
-};
 
 export default Footer;
