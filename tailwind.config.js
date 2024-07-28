@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        "1/2-screen": "50vh",
+        "lg-1/2-screen": "50vh",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
