@@ -25,8 +25,6 @@ export default function GetToKnow() {
           <p className="text-[48px] lg:text-[96px] text-primary font-bold text-shadow-decoration font-integral text-center -mt-2">
             UGM CUP
             <span className="block lg:inline mt-[-0.5em]">
-              {" "}
-              {/* Adjust mt to reduce space */}
               2024
             </span>
           </p>
