@@ -4,20 +4,26 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useJadwalContext } from "@/context/JadwalContext";
 
 const dates = [
-  { id: 0, day: "MIN", date: "18 AGS" },
-  { id: 1, day: "SEN", date: "19 AGS" },
-  { id: 2, day: "SEL", date: "20 AGS" },
-  { id: 3, day: "RAB", date: "21 AGS" },
-  { id: 4, day: "KAM", date: "22 AGS" },
-  { id: 5, day: "JUM", date: "23 AGS" },
-  { id: 6, day: "SAB", date: "24 AGS" },
+  { id: 0, day: "SEMUA", date: "HARI", actualDate: "allday" },
+  { id: 1, day: "SEN", date: "19 AGS", actualDate: "2024-08-19" },
+  { id: 2, day: "SEL", date: "20 AGS", actualDate: "2024-08-20" },
+  { id: 3, day: "RAB", date: "21 AGS", actualDate: "2024-08-21" },
+  { id: 4, day: "KAM", date: "22 AGS", actualDate: "2024-08-22" },
+  { id: 5, day: "JUM", date: "23 AGS", actualDate: "2024-08-23" },
+  { id: 6, day: "SAB", date: "24 AGS", actualDate: "2024-08-24" },
 ];
 
 const DateNavigation = () => {
   const [selectedDateIndex, setSelectedDateIndex] = useState(0);
 
+  const { setData } = useJadwalContext();
+
   const handleDateClick = (index) => {
-    setData((prevState) => ({ ...prevState, index }));
+    setData((prevData) => ({
+      ...prevData,
+      dateId: index,
+      actualDate: dates[index].actualDate,
+    }));
     setSelectedDateIndex(index);
   };
 

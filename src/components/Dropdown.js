@@ -57,7 +57,7 @@ const Dropdown = ({ data, onSelectItem }) => {
                 tabIndex="-1"
                 onClick={() => handleItemClick(item)}
               >
-                {item.nomorpertandingan + " " + item.kategori}
+                {item.nomorpertandingan}
               </a>
             </div>
           ))}

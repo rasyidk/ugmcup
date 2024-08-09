@@ -5,21 +5,22 @@ import { useJadwalContext } from "@/context/JadwalContext";
 
 export default function TabBar() {
   const [activeTab, setActiveTab] = useState(0);
-  const router = useRouter();
-  const { query } = router;
-  const pathname = usePathname();
+  const { setData } = useJadwalContext();
 
   const tabs = [
-    { id: 0, label: "Semua" },
-    { id: 1, label: "Universitas" },
-    { id: 2, label: "SMA/SMK" },
+    { id: 0, kategori: "Semua" },
+    { id: 1, kategori: "Universitas" },
+    { id: 2, kategori: "SMA/SMK" },
   ];
 
-
-  const { setData } = useJadwalContext();
-  const handleTabClick = (tabId) => {
+  const handleTabClick = (tabId, tabLabel) => {
+    alert(tabLabel);
     setActiveTab(tabId);
-    setData((prevState) => ({ ...prevState, tabId }));
+    setData((prevState) => ({
+      ...prevState,
+      tabId: tabId,
+      tabKategori: tabLabel,
+    }));
   };
 
   const getClassName = (tabIndex) =>
@@ -33,19 +34,19 @@ export default function TabBar() {
     <section>
       <div className="p-4">
         <div className="container mx-auto bg-[#E5E7EB] p-1 rounded-[16px] lg:w-[40%]">
-          <ul className="flex flex-wrap text-sm font-medium text-gray-500 dark:text-gray-400 font-poppins ">
+          <ul className="flex flex-wrap text-[10px] lg:text-sm font-medium text-gray-500 dark:text-gray-400 font-poppins ">
             {tabs.map((tab) => (
               <li key={tab.id} className="w-1/3">
                 <a
                   href="#"
                   onClick={(e) => {
                     e.preventDefault(); // Prevent the default link behavior
-                    handleTabClick(tab.id);
+                    handleTabClick(tab.id, tab.kategori);
                   }}
                   className={getClassName(tab.id)}
                   aria-current={activeTab === tab.id ? "page" : undefined}
                 >
-                  {tab.label}
+                  {tab.kategori}
                 </a>
               </li>
             ))}
