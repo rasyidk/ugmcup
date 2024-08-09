@@ -1,74 +1,64 @@
 "use client";
 import Dropdown from "@/components/Dropdown";
 import React, { useState } from "react";
+import { useJadwalContext } from "@/context/JadwalContext";
 
 const data = [
   {
     id: 0,
-    nomorpertandingan: "TUNGGAL PUTRA (MS)",
-    kategori: "UNIVERSITAS",
-    href: "#",
+    nomorpertandingan: "SEMUA PERTANDINGAN",
   },
   {
     id: 1,
     nomorpertandingan: "TUNGGAL PUTRA (MS)",
-    kategori: "SMA/SMK",
-    href: "#",
   },
   {
     id: 2,
     nomorpertandingan: "TUNGGAL PUTRI (WS)",
-    kategori: "UNIVERSITAS",
-    href: "#",
   },
   {
     id: 3,
-    nomorpertandingan: "TUNGGAL PUTRI (WS)",
-    kategori: "SMA/SMK",
-    href: "#",
+    nomorpertandingan: "GANDA PUTRA (MD)",
   },
   {
     id: 4,
-    nomorpertandingan: "GANDA PUTRA (MD)",
-    kategori: "UNIVERSITAS",
-    href: "#",
+    nomorpertandingan: "GANDA PUTRI (WD)",
   },
   {
     id: 5,
-    nomorpertandingan: "GANDA PUTRA (MD)",
-    kategori: "SMA/SMK",
-    href: "#",
+    nomorpertandingan: "GANDA CAMPURAN (XD)",
   },
   {
     id: 6,
-    nomorpertandingan: "GANDA PUTRI (WD)",
-    kategori: "UNIVERSITAS",
-    href: "#",
+    nomorpertandingan: "BEREGU (TM) TUNGGAL PUTRA",
   },
   {
     id: 7,
-    nomorpertandingan: "GANDA PUTRI (WD)",
-    kategori: "SMA/SMK",
-    href: "#",
+    nomorpertandingan: "BEREGU (TM) TUNGGAL PUTRI",
   },
   {
     id: 8,
-    nomorpertandingan: "GANDA CAMPURAN (XD)",
-    kategori: "UNIVERSITAS",
-    href: "#",
+    nomorpertandingan: "BEREGU (TM) GANDA PUTRA",
   },
   {
     id: 9,
-    nomorpertandingan: "GANDA CAMPURAN (XD)",
-    kategori: "SMA/SMK",
-    href: "#",
+    nomorpertandingan: "BEREGU (TM) GANDA PUTRI",
+  },
+  {
+    id: 10,
+    nomorpertandingan: "BEREGU (TM) GANDA CAMPURAN",
   },
 ];
 
 export default function FilterCategory() {
   const [selectedItem, setSelectedItem] = useState(null);
+  const { setData } = useJadwalContext();
   const handleSelectItem = (item) => {
-    console.log("Selected Item Function Called:", item); // Debugging
+    setData((prevState) => ({
+      ...prevState,
+      categoryId: item.id,
+      nomorpertandingan: item.nomorpertandingan,
+    }));
     setSelectedItem(item);
   };
   return (

@@ -19,7 +19,7 @@ export default function KilasBalik() {
               <p className="text-shadow-decoration text-secondary font-integral font-bold text-[25px] text-left lg:text-[64px] m-0">
                 Kilas Balik
               </p>
-              <p className="text-shadow-decoration text-secondary font-integral font-bold text-[48px]  lg:text-[96px] -mt-4 lg:-mt-8">
+              <p className="text-shadow-decoration text-secondary font-integral font-bold text-[48px]  lg:text-[90px] -mt-4 lg:-mt-8">
                 UGM CUP
               </p>
             </div>
