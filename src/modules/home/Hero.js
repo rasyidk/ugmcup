@@ -2,6 +2,7 @@
 import Button from "@/components/Button";
 import ClientComponent from "@/components/ClientComponent";
 import RoundedImage from "@/components/RoundedImage";
+import Link from "next/link";
 import React from "react";
 
 export default function Hero() {
@@ -67,9 +68,11 @@ export default function Hero() {
               Bulutangkis Nasional antar Mahasiswa dan SMA/SMK 2024.
             </p>
 
-            <Button className="text-[12px] font-poppins font-regular mt-[20px] lg:text-[18px]">
-              Jadwal Pertandingan
-            </Button>
+            <Link href="/jadwal">
+              <Button className="text-[12px] font-poppins font-regular mt-[20px] lg:text-[18px]">
+                Jadwal Pertandingan
+              </Button>
+            </Link>
           </div>
         </div>
 
