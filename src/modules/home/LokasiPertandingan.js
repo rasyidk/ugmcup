@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function LokasiPertandingan() {
@@ -50,7 +51,7 @@ export default function LokasiPertandingan() {
               </p>
               <p className="font-poppins text-[14px] text-black text-center lg:text-left lg:text-[18px] lg:mt-[20px] mt-2">
                 <b>UGM CUP 2024</b> akan diadakan di GOR Pancasila, Universitas
-                Gadjah Mada, dari tanggal <b>18 hingga 24 Agustus 2024</b>{" "}
+                Gadjah Mada, dari tanggal <b>19 hingga 24 Agustus 2024</b>{" "}
                 Saksikan pertandingan seru dari tim-tim terbaik Universitas dan
                 SMA/SMK se-Indonesia dalam turnamen Badminton tingkat nasional
                 ini. Jangan lewatkan kesempatan untuk merasakan atmosfer
@@ -71,9 +72,11 @@ export default function LokasiPertandingan() {
             </div>
           </div>
 
-          <Button className="text-[12px] font-poppins font-regular mt-[20px] lg:mt-[40px] bg-primary text-white lg:font-integral lg:text-[24px]">
-            LIHAT DI GOOGLE MAPS
-          </Button>
+          <Link href="https://www.google.com/maps/place/GOR+Pancasila+UGM/@-7.769173,110.3814421,17z/data=!3m1!4b1!4m6!3m5!1s0x2e7a593bf3372dd7:0xf06a25ad07e2c6bd!8m2!3d-7.7691783!4d110.384017!16s%2Fg%2F11tx1rglb0?entry=ttu">
+            <Button className="text-[12px] font-poppins font-regular mt-[20px] lg:mt-[40px] bg-primary text-white lg:font-integral lg:text-[24px]">
+              LIHAT DI GOOGLE MAPS
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

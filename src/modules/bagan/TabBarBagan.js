@@ -1,24 +1,22 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
-import { useJadwalContext } from "@/context/JadwalContext";
+import { useBaganContext } from "@/context/BaganContext";
 
-export default function TabBar() {
+export default function TabBarBagan() {
   const [activeTab, setActiveTab] = useState(0);
-  const { setData } = useJadwalContext();
-
+  const { data, setData } = useBaganContext();
   const tabs = [
-    { id: 0, kategori: "Semua" },
-    { id: 1, kategori: "Universitas" },
-    { id: 2, kategori: "SMA/SMK" },
+    { id: 0, kategori: "Universitas" },
+    { id: 1, kategori: "SMA/SMK" },
+    { id: 2, kategori: "Beregu" },
   ];
 
-  const handleTabClick = (tabId, tabLabel) => {
+  const handleTabClick = (tabId, tabKategori) => {
     setActiveTab(tabId);
-    setData((prevState) => ({
-      ...prevState,
-      tabId: tabId,
-      tabKategori: tabLabel,
+    setData((prevData) => ({
+      ...prevData,
+      tabId,
+      tabKategori, // Optionally update the category as well
     }));
   };
 
@@ -31,7 +29,7 @@ export default function TabBar() {
 
   return (
     <section>
-      <div className="p-4">
+      <div className="p-4 bg-[#EDEEF2]">
         <div className="container mx-auto bg-[#E5E7EB] p-1 rounded-[16px] lg:w-[40%]">
           <ul className="flex flex-wrap text-[10px] lg:text-sm font-medium text-gray-500 dark:text-gray-400 font-poppins ">
             {tabs.map((tab) => (
