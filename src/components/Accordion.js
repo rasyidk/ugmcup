@@ -83,52 +83,60 @@ const Accordion = ({ items, type }) => {
                   </div>
 
                   {item.klasemen
-                    ? item.klasemen.map((klasemen, index) => (
-                        <div
-                          className={`flex flex-row py-2 ${
-                            index % 2 !== 0 ? "bg-gray-300" : "text-black"
-                          }`}
-                        >
-                          <div className="w-1/2 flex flex-row font-poppins text-black text-[18px]">
-                            <div className="w-2/12 text-center text-black">
-                              {index + 1}
+                    ? item.klasemen
+                        .slice()
+                        .sort((a, b) => {
+                          if (b.mp === a.mp) {
+                            return b.points - a.points;
+                          }
+                          return b.mp - a.mp;
+                        })
+                        .map((klasemen, index) => (
+                          <div
+                            className={`flex flex-row py-2 ${
+                              index % 2 !== 0 ? "bg-gray-300" : "text-black"
+                            }`}
+                          >
+                            <div className="w-1/2 flex flex-row font-poppins text-black text-[18px]">
+                              <div className="w-2/12 text-center text-black">
+                                {index + 1}
+                              </div>
+                              <div className="w-10/12   text-black flex flex-row items-center">
+                                <Image
+                                  src={
+                                    process.env.NEXT_PUBLIC_ASEETS_URL +
+                                    klasemen.logo_team
+                                  }
+                                  alt="Player A1"
+                                  width={32}
+                                  height={32}
+                                  unoptimized
+                                  className="rounded-full h-8 w-8"
+                                />
+                                <p className="ml-2">{klasemen.team}</p>
+                              </div>
                             </div>
-                            <div className="w-10/12   text-black flex flex-row items-center">
-                              <Image
-                                src={
-                                  process.env.NEXT_PUBLIC_ASEETS_URL +
-                                  klasemen.logo_team
-                                }
-                                alt="Player A1"
-                                width={32}
-                                height={32}
-                                unoptimized
-                                className="rounded-full h-8 w-8"
-                              />
-                              <p className="ml-2">{klasemen.team}</p>
+                            <div className="w-1/2 ">
+                              <div className="grid grid-cols-5 gap-4 font-poppins font-bold text-black">
+                                <p className="text-center text-black">
+                                  {klasemen.mp}
+                                </p>
+                                <p className="text-center text-black">
+                                  {klasemen.w}
+                                </p>
+                                <p className="text-center text-black">
+                                  {klasemen.l}
+                                </p>
+                                <p className="text-center text-black">
+                                  {klasemen.games}
+                                </p>
+                                <p className="text-center text-black">
+                                  {klasemen.points}
+                                </p>
+                              </div>
                             </div>
                           </div>
-                          <div className="w-1/2 ">
-                            <div className="grid grid-cols-5 gap-4 font-poppins font-bold text-black">
-                              <p className="text-center text-black">
-                                {klasemen.mp}
-                              </p>
-                              <p className="text-center text-black">
-                                {klasemen.w}
-                              </p>
-                              <p className="text-center text-black">
-                                {klasemen.l}
-                              </p>
-                              <p className="text-center text-black">
-                                {klasemen.games}
-                              </p>
-                              <p className="text-center text-black">
-                                {klasemen.points}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      ))
+                        ))
                     : null}
                 </div>
 
