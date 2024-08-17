@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="flex min-h-screen bg-primary ">
           <div className="flex flex-col items-center justify-center px-4 mx-auto md:w-4/5 lg:w-3/5 -mt-[90px] ">
             <p className="  text-[27px] lg:text-[64px] text-shadow-decoration font-integral text-secondary font-bold ">
-              SHUTTLE SYMPOHONY
+              SHUTTLE SYMPHONY
             </p>
             <p className=" text-[28px] lg:text-[64px] text-shadow-decoration font-integral text-secondary font-bold -mt-[10px] lg:-mt-4">
               HARMONY IN MOTION
@@ -69,21 +69,21 @@ export default function Hero() {
             </p>
 
             <Link href="/jadwal">
-              <Button className="text-[12px] font-poppins font-regular mt-[20px] lg:text-[18px]">
+              <Button className="text-[12px] font-poppins font-regular mt-[20px] lg:text-[18px] z-20">
                 Jadwal Pertandingan
               </Button>
             </Link>
           </div>
         </div>
 
-        <div className="absolute bottom-0 h-1/3 w-full overflow-hidden z-20">
+        <div className="absolute bottom-0 h-[40%] w-full overflow-hidden z-20">
           {images.map((image, index) => (
             <ImageComponent key={index} {...image} />
           ))}
         </div>
 
         <div className="absolute lg:bottom-[230px] bottom-[120px] lg:-left-40 -left-[100px] overflow-hidden -rotate-90 ">
-          <p className=" font-bebas lg:text-[350px] text-[90px] text-outline-decoration text-transparent tracking-[0.2em] lg:tracking-[0em]">
+          <p className=" font-bebas lg:text-[350px] text-[80px] text-outline-decoration text-transparent tracking-[0.2em] lg:tracking-[0em]">
             UGM CUP
           </p>
         </div>
