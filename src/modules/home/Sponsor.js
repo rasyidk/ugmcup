@@ -3,19 +3,14 @@ import Image from "next/image";
 
 const sponsors = [
   {
-    id: 1,
-    name: "Sponsor 1",
-    imageUrl: "/assets/home/sponsor/sponsor_pupukkaltim.svg",
-  },
-  {
     id: 2,
     name: "Sponsor 2",
-    imageUrl: "/assets/home/sponsor/sponsor_alumni.svg",
+    imageUrl: "/assets/home/sponsor/sponsor_patra.svg",
   },
   {
-    id: 3,
-    name: "Sponsor 3",
-    imageUrl: "/assets/home/sponsor/sponsor_patrajasa.svg",
+    id: 1,
+    name: "Sponsor 1",
+    imageUrl: "/assets/home/sponsor/sponsor_alumni.svg",
   },
 ];
 

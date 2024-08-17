@@ -49,6 +49,7 @@ export default function Match() {
 
         const url = `${process.env.NEXT_PUBLIC_API_URL}/matches?${filterKategori}${filterDate}${filterNomorPertandingan}pagination[page]=${page}&populate[ResultsMatch]=*&pagination[pageSize]=10&populate[player_A1][populate][team][populate][logo_team]=*&populate[player_A2][populate][team][populate][logo_team]=*&populate[player_B1][populate][team][populate][logo_team]=*&populate[player_B2][populate][team][populate][logo_team]=*`;
 
+        // alert(url);
         const response = await axios.get(url, {
           headers: {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_JWT_TOKEN}`,
