@@ -40,7 +40,8 @@ export default function MatchCard({ match }) {
             <div className="flex flex-col w-7/12 lg:w-6/12  px-4 py-2 justify-center">
               <div className="w-full flex flex-row items-center">
                 <div className="flex items-center justify-center w-8 h-8 bg-yellow-400 rounded-full flex-shrink-0">
-                  {match.player_A1.data.attributes.team.data ? (
+                  {match.player_A1.data &&
+                  match.player_A1.data.attributes.team.data ? (
                     <Image
                       src={
                         process.env.NEXT_PUBLIC_ASEETS_URL +
@@ -56,14 +57,17 @@ export default function MatchCard({ match }) {
                   ) : null}
                 </div>
                 <p className="text-black font-poppins text-[12px] lg:text-[16px] ml-1">
-                  {match.player_A1.data.attributes.nama_player}
+                  {match.player_A1.data
+                    ? match.player_A1.data.attributes.nama_player
+                    : null}
                 </p>
               </div>
 
               {match.nomor_pertandingan.includes("GANDA") ? (
                 <div className="w-full flex flex-row items-center mt-1 ">
                   <div className="flex items-center justify-center w-8 h-8 bg-yellow-400 rounded-full flex-shrink-0">
-                    {match.player_A2.data.attributes.team.data ? (
+                    {match.player_A2.data &&
+                    match.player_A2.data.attributes.team.data ? (
                       <Image
                         src={
                           process.env.NEXT_PUBLIC_ASEETS_URL +
@@ -79,7 +83,9 @@ export default function MatchCard({ match }) {
                     ) : null}
                   </div>
                   <p className="text-black font-poppins text-[12px] lg:text-[16px] ml-1">
-                    {match.player_A2.data.attributes.nama_player}
+                    {match.player_A2.data
+                      ? match.player_A2.data.attributes.nama_player
+                      : null}
                   </p>
                 </div>
               ) : null}
@@ -126,7 +132,8 @@ export default function MatchCard({ match }) {
             <div className="flex flex-col w-7/12 lg:w-6/12  px-4 pt-2 justify-center">
               <div className="w-full flex flex-row items-center">
                 <div className="flex items-center justify-center w-8 h-8 bg-yellow-400 rounded-full flex-shrink-0">
-                  {match.player_B1.data.attributes.team.data ? (
+                  {match.player_B1.data &&
+                  match.player_B1.data.attributes.team.data ? (
                     <Image
                       src={
                         process.env.NEXT_PUBLIC_ASEETS_URL +
@@ -142,14 +149,17 @@ export default function MatchCard({ match }) {
                   ) : null}
                 </div>
                 <p className="text-black font-poppins text-[12px] lg:text-[16px] ml-1">
-                  {match.player_B1.data.attributes.nama_player}
+                  {match.player_B1.data
+                    ? match.player_B1.data.attributes.nama_player
+                    : null}
                 </p>
               </div>
 
               {match.nomor_pertandingan.includes("GANDA") ? (
                 <div className="w-full flex flex-row items-center mt-1">
                   <div className="flex items-center justify-center w-8 h-8 bg-yellow-400 rounded-full flex-shrink-0">
-                    {match.player_B2.data.attributes.team.data ? (
+                    {match.player_B2.data &&
+                    match.player_B2.data.attributes.team.data ? (
                       <Image
                         src={
                           process.env.NEXT_PUBLIC_ASEETS_URL +
@@ -165,7 +175,9 @@ export default function MatchCard({ match }) {
                     ) : null}
                   </div>
                   <p className="text-black font-poppins text-[12px] lg:text-[16px] ml-1">
-                    {match.player_B2.data.attributes.nama_player}
+                    {match.player_B2.data
+                      ? match.player_B2.data.attributes.nama_player
+                      : null}
                   </p>
                 </div>
               ) : null}

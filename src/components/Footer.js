@@ -44,7 +44,7 @@ const medsos = [
 
 export function Footer({ type }) {
   return (
-    <footer className="w-full items-center justify-center bg-[#286BA2]">
+    <footer className="w-full items-center justify-center bg-[#286BA2] text-white">
       <div className="flex justify-between px-[16px] pb-4 md:px-[32px] lg:px-[72px] lg:pb-0">
         <div className="w-full  p-4 md:p-8 lg:flex lg:justify-between">
           <div

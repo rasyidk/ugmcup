@@ -47,9 +47,8 @@ export default function Match() {
             ? `filters[nomor_pertandingan][$eq]=${nomorpertandinganURI}&`
             : "";
 
-        const url = `${process.env.NEXT_PUBLIC_API_URL}/matches?${filterKategori}${filterDate}${filterNomorPertandingan}pagination[page]=${page}&populate[ResultsMatch]=*&pagination[pageSize]=10&populate[player_A1][populate][team][populate][logo_team]=*&populate[player_A2][populate][team][populate][logo_team]=*&populate[player_B1][populate][team][populate][logo_team]=*&populate[player_B2][populate][team][populate][logo_team]=*`;
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/matches?${filterKategori}${filterDate}${filterNomorPertandingan}pagination[page]=${page}&populate[ResultsMatch]=*&pagination[pageSize]=10&populate[player_A1][populate][team][populate][logo_team]=*&populate[player_A2][populate][team][populate][logo_team]=*&populate[player_B1][populate][team][populate][logo_team]=*&populate[player_B2][populate][team][populate][logo_team]=*&sort[0]=datetime:asc`;
 
-        // alert(url);
         const response = await axios.get(url, {
           headers: {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_JWT_TOKEN}`,
