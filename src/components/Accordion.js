@@ -148,30 +148,38 @@ const Accordion = ({ items, type }) => {
                   </div>
 
                   {item.klasemen
-                    ? item.klasemen.map((klasemen, index) => (
-                        <div
-                          className={`flex flex-row text-black font-poppins text-[14px] py-2 ${
-                            index % 2 !== 0 ? "bg-gray-300" : "text-black"
-                          }`}
-                        >
-                          <p className="w-2/12 text-center">{index + 1}</p>
-                          <div className="w-8/12 flex flex-row">
-                            <Image
-                              src={
-                                process.env.NEXT_PUBLIC_ASEETS_URL +
-                                klasemen.logo_team
-                              }
-                              alt="Player A1"
-                              width={24}
-                              height={24}
-                              unoptimized
-                              className="rounded-full h-6 w-6"
-                            />
-                            <p className="ml-2">{klasemen.team}</p>
+                    ? item.klasemen
+                        .slice()
+                        .sort((a, b) => {
+                          if (b.mp === a.mp) {
+                            return b.points - a.points;
+                          }
+                          return b.mp - a.mp;
+                        })
+                        .map((klasemen, index) => (
+                          <div
+                            className={`flex flex-row text-black font-poppins text-[14px] py-2 ${
+                              index % 2 !== 0 ? "bg-gray-300" : "text-black"
+                            }`}
+                          >
+                            <p className="w-2/12 text-center">{index + 1}</p>
+                            <div className="w-8/12 flex flex-row">
+                              <Image
+                                src={
+                                  process.env.NEXT_PUBLIC_ASEETS_URL +
+                                  klasemen.logo_team
+                                }
+                                alt="Player A1"
+                                width={24}
+                                height={24}
+                                unoptimized
+                                className="rounded-full h-6 w-6"
+                              />
+                              <p className="ml-2">{klasemen.team}</p>
+                            </div>
+                            <p className="w-2/12 text-center">{klasemen.mp}</p>
                           </div>
-                          <p className="w-2/12 text-center">{klasemen.mp}</p>
-                        </div>
-                      ))
+                        ))
                     : null}
                 </div>
               </AccordionItem>
